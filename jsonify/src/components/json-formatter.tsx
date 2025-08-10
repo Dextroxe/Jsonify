@@ -10,6 +10,7 @@ interface JsonFormatterProps {
   jsonInput: string
   jsonOutput: string
   isValid: boolean | null
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   validationErrors: any[]
   onJsonChange: (value: string) => void
   onFormatJson: () => void

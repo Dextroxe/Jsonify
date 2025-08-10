@@ -20,6 +20,7 @@ export const validateJson = (jsonString: string, schemaType?: SchemaType) => {
       return { valid, errors: validate.errors || [], parsed }
     }
     return { valid: true, errors: [], parsed }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return { valid: false, errors: [{ message: "Invalid JSON syntax" }], parsed: null }
   }

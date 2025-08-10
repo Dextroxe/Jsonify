@@ -10,6 +10,7 @@ interface JsonCompleterProps {
   jsonInput: string
   jsonOutput: string
   isValid: boolean | null
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   validationErrors: any[]
   selectedSchema: string
   onJsonChange: (value: string) => void

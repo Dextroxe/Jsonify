@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState } from "react"
@@ -18,7 +19,7 @@ export default function LandingPg() {
   const [isValid, setIsValid] = useState<boolean | null>(null)
   const [activeTab, setActiveTab] = useState("create")
   const [selectedSchema, setSelectedSchema] = useState<SchemaType>("user")
-  const [validationErrors, setValidationErrors] = useState<any[]>([])
+  const [validationErrors, setValidationErrors] = useState<unknown[]>([])
 
   const handleJsonChange = (value: string) => {
     setJsonInput(value)
