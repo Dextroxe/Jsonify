@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { faker } from "@faker-js/faker"
 import { schemas, type SchemaType} from "./json-schemas"
 // import { schemas, type SchemaType } from "./json-schemas"
@@ -41,7 +42,7 @@ export const completeJsonWithSchema = (jsonData: any, schemaType: SchemaType) =>
     schema.required.forEach((field: string) => {
       if (!(field in completed)) {
         // Generate appropriate dummy data based on field name and schema
-        const fieldSchema = schema.properties[field]
+        const fieldSchema = (schema.properties as Record<string, any>)[field]
         if (fieldSchema) {
           completed[field] = generateFieldValue(field, fieldSchema)
         }
@@ -50,10 +51,10 @@ export const completeJsonWithSchema = (jsonData: any, schemaType: SchemaType) =>
   }
 
   // Add common fields if missing
-  if (!completed.id && schema.properties.id) {
+  if (!completed.id && "id" in schema.properties) {
     completed.id = faker.string.uuid()
   }
-  if (!completed.createdAt && schema.properties.createdAt) {
+  if (!completed.createdAt && schema.properties && "createdAt" in schema.properties) {
     completed.createdAt = new Date().toISOString()
   }
 

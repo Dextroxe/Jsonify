@@ -2,6 +2,7 @@ import { CheckCircle, AlertCircle } from "lucide-react"
 
 interface JsonValidationIndicatorProps {
   isValid: boolean | null
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   validationErrors: any[]
 }
 
