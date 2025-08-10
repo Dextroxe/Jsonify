@@ -12,6 +12,7 @@ import { generateDummyData, generateFromStructure } from "@/lib/json-generator"
 import { validateJson } from "@/lib/json-validator"
 import { completeJsonWithSchema } from "@/lib/json-completer"
 import type { SchemaType } from "@/lib/json-schemas"
+import { AppFooter } from "./app-footer"
 
 export default function LandingPg() {
   const [jsonInput, setJsonInput] = useState("")
@@ -232,6 +233,8 @@ export default function LandingPg() {
           </Tabs>
         </div>
       </main>
+      
+       <AppFooter />
     </div>
   )
 }
